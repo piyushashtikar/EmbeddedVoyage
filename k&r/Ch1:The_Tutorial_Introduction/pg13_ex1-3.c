@@ -15,6 +15,7 @@ step=20;
 
 fahr=lower;
 
+printf("Fahrenheit to celsius conversion table\n");
 while(fahr<=upper)
 {
 celsius=5.0/9.0 * (fahr-32);
