@@ -1,0 +1,9 @@
+CTRL + D for EOF
+always use in new line. 
+
+find . -type f -name '*~' -exec rm -f '{}' \;
+to delete files with tilde. 
+
+This command is same as
+find . -type f -exec grep "example" '{}' \; -print
+ie run grep "example" on every file you get as output
