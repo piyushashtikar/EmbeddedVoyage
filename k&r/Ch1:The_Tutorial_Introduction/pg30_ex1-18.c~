@@ -1,0 +1,69 @@
+#include<stdio.h>
+#define MAXLINE	1000
+
+int my_getline(char line[], int maxline);
+
+
+main()
+{
+
+
+int len; //Length of current line
+int max; //Max length of line seen so far
+int c;
+
+
+char line[MAXLINE];
+
+
+max=0;
+
+while((len=my_getline(line,MAXLINE)) > 0) {
+
+
+printf("%s",line);
+
+
+}
+
+
+return 0;
+
+}
+
+int my_getline(char s[],int limit){
+
+int i,c;
+int insidebreak=0;
+
+for(i=0;i<limit-1 && (c=getchar())!=EOF && c!='\n';++i ){
+
+if(c==32 || c==9) {
+printf("break\n");
+if(insidebreak>0) {
+i--;printf("skipped\n");insidebreak++;continue;
+}
+
+insidebreak++;
+printf("Inside break=%d\n",insidebreak);
+}
+
+insidebreak=0;
+
+s[i]=c;
+}
+
+if(c=='\n') {
+s[i]=c;
+++i;
+}
+
+s[i]='\0';
+
+return i;
+
+}
+
+
+
+
