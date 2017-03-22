@@ -43,11 +43,11 @@ printf("break\n");
 if(insidebreak>0) {
 i--;printf("skipped\n");insidebreak++;continue;
 }
-
 insidebreak++;
 printf("Inside break=%d\n",insidebreak);
 }
 
+if(insidebreak!=1)
 insidebreak=0;
 
 s[i]=c;

@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int externvar;
+
+
+void my_func();
+
+main()
+{
+externvar=9;
+
+printf("in main:%d\n",externvar);
+
+my_func();
+
+
+}
+
+void my_func(){
+
+printf("in my_func:%d\n",externvar);
+
+}

@@ -19,11 +19,7 @@ char line[MAXLINE];
 max=0;
 
 while((len=my_getline(line,MAXLINE)) > 0) {
-
-
 printf("%s",line);
-
-
 }
 
 
@@ -41,15 +37,13 @@ for(i=0;i<limit-1 && (c=getchar())!=EOF && c!='\n';++i ){
 if(c==32 || c==9) {
 printf("break\n");
 if(insidebreak>0) {
-i--;printf("skipped\n");insidebreak++;continue;
+i--;insidebreak++;continue;
 }
-
 insidebreak++;
-printf("Inside break=%d\n",insidebreak);
 }
 
+if(insidebreak!=1)
 insidebreak=0;
-
 s[i]=c;
 }
 
