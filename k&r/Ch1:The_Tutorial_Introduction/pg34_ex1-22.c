@@ -1,0 +1,61 @@
+/*Entab*/
+#include<stdio.h>
+
+#define MAXLINE	200
+#define MAX_COLS	20
+
+int my_getline(char line[],int length);
+
+main() {
+char line[MAXLINE];
+
+while(my_getline(line,MAXLINE) > 0)
+printf("%s\n",line);
+}
+
+
+int my_getline(char line[],int len){
+int i,c;
+int nchars=0;
+int last_break=0;
+int newline_chars=0;
+
+
+
+
+while((c=getchar())!=EOF && c!='\n') 
+if(nchars< len-1) {
+
+if(newline_chars==MAX_COLS-1){
+	
+	if(last_break==0){
+	line[nchars++]='-';
+	line[nchars++]='\n';
+	newline_chars=0;
+	}
+}
+
+else if(newline_chars==MAX_COLS) {
+
+	line[last_break]='\n';
+	newline_chars=0;
+	last_break=0;
+}
+
+if(c==' ' || c=='\t')
+last_break=nchars;
+
+
+ 
+line[nchars]=c;
+++nchars;
+++newline_chars;
+
+
+}
+
+line[nchars]='\0';
+return nchars;
+
+}
+
