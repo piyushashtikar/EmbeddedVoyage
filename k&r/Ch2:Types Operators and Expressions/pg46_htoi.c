@@ -1,0 +1,43 @@
+#include<stdio.h>
+
+
+int my_htoi(char s[])
+{
+
+int i,result;
+i=result=0;
+
+for(i=0;(s[i]>='0' && s[i]<='9') || (s[i]>='A' && s[i]<='F') ||  (s[i]>='a' && s[i]<='b');i++) {
+
+
+if(s[i]>='0' && s[i]<='9')
+result=result*16 + (s[i]-'0'+0);
+
+else if(s[i]>='A' && s[i]<='F')
+result=result*16 + (s[i]-'A'+10);
+
+else if(s[i]>='a' && s[i]<='b')
+result=result*16 + (s[i]-'a'+10);
+
+
+
+}
+
+
+
+return result;
+
+
+}
+
+
+main() 
+{
+
+char *tempstring="FFFFaa2";
+
+printf("Result=%d\n\n",my_htoi(tempstring));
+
+
+
+}

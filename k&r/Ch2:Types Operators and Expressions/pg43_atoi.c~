@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+
+int my_atoi(char s[])
+{
+
+int i,result;
+i=result=0;
+
+for(i=0;s[i]>'0' && s[i]<'9';i++)
+result=result*10 + (s[i]-'0');
+
+
+
+return result;
+
+
+}
+
+
+main() 
+{
+
+char tempstring[5]="212";
+
+printf("Result=%d\n\n",my_atoi(tempstring));
+
+
+
+}
