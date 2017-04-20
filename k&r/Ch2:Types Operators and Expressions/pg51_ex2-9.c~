@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+
+int bitcount(unsigned int x)
+{
+int counter=0;
+
+while(x&=(x-1))
+counter++;
+
+return counter;
+}
+
+main()
+{
+printf("%d",bitcount(182));
+}
